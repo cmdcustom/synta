@@ -1,0 +1,35 @@
+.auto-newline {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.codeblock {
+  background-color: #f5f2f0;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+.py-imports {
+  color:#4F5BFF;
+}
+
+.py-spec {
+  color: #E46F07;
+}
+
+.py-stms {
+  color: green;
+}
+
+.nj-imports {
+  color:#4F5BFF;
+}
+
+.nj-vars {
+  color: red;
+}
+
+.nj-stms {
+  color: green;
+}

@@ -1,0 +1,170 @@
+<script src='python.js'></script>
+<script src='njs.js'></script>
+<link rel='stylesheet' href='css.css'/>
+
+<p>
+  Welcome to the documentation of Synta! OpenSource on
+  <a href='https://replit.com/@cmdcustom/syntacdn'> 
+    Repl
+  </a> 
+  
+  and  
+  <a href='https://github.com/cmdcustom/synta'> 
+    GitHub 
+  </a>
+</p>
+
+<p>
+  It is this easy: 
+</p>
+
+<div id='highlight' class='codeblock auto-newline'>import sys
+import platform as utils 
+import promptlib
+from requests_html import HTMLSession as h
+
+print(1) 
+
+def test(): #normal func 
+  print('testing')
+  return True
+
+async def test2(): #asynchronous func 
+  print('testing again')
+  return False
+
+prompter = promptlib.Files()
+
+directory = promptlib.dir() 
+file = promptlib.file() 
+
+f1 = open(file).read()
+f2 = open(f'{directory}\out.txt', 'w')
+f2.write(f1)
+
+try: 
+  import Tkinter as tk #python 2
+except: 
+  import tkinter as tk #python 3
+
+r = h()
+
+for i in range(1,22+1):
+  print(f'{i}!)
+
+exec(
+  """def myfunc(): 
+  print(x)"""
+) #dynamic function creation
+
+
+myfunc() #function myfunc at blahblahblah
+</div>
+
+<p>Or in nodejs: </p>
+
+<div id='nodejs-highlight' class='codeblock auto-newline'>const proc = require('process');
+
+function myfunc() {
+  console.log('test');
+
+  let one = 1;
+  var two = 2;
+  const three = 3;
+  nodev = proc.version
+
+  console.log(one,two,three, nodev);
+};
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve))
+}
+
+async function waitdostuff() {
+  await wait(1000)
+  console.log('after 1 second')
+}
+
+myfunc() 
+waitdostuff()
+</div>
+
+<script>
+  highlight_python(document.getElementById('highlight'))
+  highlight_nodejs(document.getElementById('nodejs-highlight'))
+</script>
+
+<p class='auto-newline'>Usage:
+
+Include this code in your head: 
+
+<p id='brt' class='auto-newline codeblock'>&lt;link href='https://syntacdn-2.cmdcustom.repl.co/css.css'/&gt
+&lt;script src='https://syntacdn-2.cmdcustom.repl.co/langidhere.js&gt&lt/script&gt
+</p>
+<br>
+<select id='lid' class='t'>
+  <option value='nodejs' selected>NodeJS</option>
+  <option value='python'>Python</option>
+  <option disabled value='batch'>Batch (In works)</option>
+  <option disabled value='bash'>Bash (In works)</option>
+</select>
+
+<style>
+  t {
+    width: 20px;
+    height: 20px;
+  }
+</style>
+
+<button onclick='f()'>Find ID!</button>
+<p id='results'></p>
+
+<script>
+  function f() {
+    tr = document.querySelector('#lid').value
+    if (tr == 'NodeJS' || tr == 'nodejs') {
+      rkc = document.querySelector('#brt')
+      rsl = document.querySelector('#results')
+      rkc.innerHTML = rkc.innerHTML.replace('langidhere.js', 'njs.js')
+      rsl.innerText = 'Code updated to match language: NodeJS.'
+    }
+
+    if (tr == 'python' || tr == 'Python') {
+      rkc = document.querySelector('#brt')
+      rsl = document.querySelector('#results')
+      rkc.innerHTML = rkc.innerHTML.replace('langidhere.js', 'python.js')
+      rsl.innerText = 'Code updated to match language: Python.'
+    }
+  }
+</script>
+Now, write the code:
+<p class='auto-newline codeblock'>&lt;div id='syntax' class='auto-newline codeblock'&gt;
+Code Here
+&lt;/div&gt;
+
+&lt;script&gt;
+highlight_language_name_not_id(document.querySelector('#syntax')) //e.g. python or nodejs or batch or bash
+&lt;/script&gt;
+</p>
+
+Example (code): 
+<p class='auto-newline codeblock'>&lt;div id='syntax' class='auto-newline codeblock'&gt;
+import sys as c
+
+print(c.version)
+&lt;/div&gt;
+
+&lt;script&gt;
+highlight_python(document.querySelector('#syntax'))
+&lt;/script&gt;
+</p>
+
+Example (output): 
+<div id='syntax' class='auto-newline codeblock'>import sys as c
+
+print(c.version)
+</div>
+
+<script>
+highlight_python(document.querySelector('#syntax'))
+</script>
